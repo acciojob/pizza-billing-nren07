@@ -5,7 +5,6 @@ public class Pizza {
 
     private boolean cheese=false;
     private boolean topping=false;
-    private boolean paperBag;
     private int price;
     private Boolean isVeg;
     private String bill;
@@ -14,6 +13,7 @@ public class Pizza {
         this.isVeg = isVeg;
         if(isVeg){
             this.price=300;
+            bill=new String("");
             this.bill="Base Price Of The Pizza:"+this.price+"\n";
         }else{
             this.price=400;
@@ -55,12 +55,8 @@ public class Pizza {
     }
 
     public void addTakeaway(){
-        // your code goes here
-        if(!this.paperBag){
-            this.price+=20;
-            this.paperBag=true;
-            this.bill+="Paperbag Added:"+20+"\n";
-        }
+        this.price+=20;
+        this.bill+="Paperbag Added:"+20+"\n";
     }
 
     public String getBill(){
